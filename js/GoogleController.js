@@ -30,6 +30,6 @@ function GoogleController($scope, googleService) {
 function displayGoogleSearchResult($scope, googleService) {
   googleService.search($scope.keyword)
   .then(function success(result){
-    $scope.message = result;
+    $scope.results = result.data.items;
   });
 }

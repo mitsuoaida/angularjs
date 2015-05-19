@@ -16,7 +16,13 @@
       <p>
         <input type='text' ng-model='keyword' size="100" ng-keydown="handleKeydown($event)"/>
         <button type="button" class="btn-primary" ng-click="search()">検索</button><br/>
-        {{message|json}}
+        <ul>
+          <div ng-repeat="result in results">
+            <li>
+              <a hg-href="{{result.htmlFormattedUrl}}" >{{result.htmlTitle}}</a>
+            </li>
+          </div>
+        </ul>
       </p>
     </div>
   </body>
